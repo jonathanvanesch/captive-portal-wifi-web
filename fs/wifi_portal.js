@@ -52,7 +52,7 @@ var WiFiPortal = {
                 responseVal = "Unable to get info from device";
             }
 
-//jve            document.getElementById("response").innerHTML = responseVal ? responseVal : '';
+            document.getElementById("response").innerHTML = responseVal ? responseVal : '';
 
             // infoMessage is only sent when called by Test obj
             if( ! infoMessage ){
@@ -172,10 +172,10 @@ var WiFiPortal = {
                 WiFiPortal.Error.show('Test has timed out after ' + WiFiPortal.Test._timeout + ' seconds. Please check the SSID and Password and try again.');
                 WiFiPortal.Info.hide();
                 // Empty status box
- //jve               var responseDiv = document.getElementById("response");
- //jve               if( responseDiv ){
- //jve                   responseDiv.innerHTML = '';
- //jve               }
+                var responseDiv = document.getElementById("response");
+                if( responseDiv ){
+                    responseDiv.innerHTML = '';
+                }
             }
 
             // Clear all timers on timeout
@@ -194,7 +194,7 @@ var WiFiPortal = {
 
                        // Output response wifi JSON formatted (2 spaces), and with syntax highlighting
                        var stringifyJson = JSON.stringify(resp.wifi, undefined, 2);
-    //jve                   document.getElementById("response").innerHTML = WiFiPortal.highlight(stringifyJson);
+                       document.getElementById("response").innerHTML = WiFiPortal.highlight(stringifyJson);
 
                        if (resp.wifi.status && resp.wifi.ssid) {
                            // "got ip" means successful connection to WiFi, also check that SSId matches one we're testing against
