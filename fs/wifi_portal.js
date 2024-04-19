@@ -172,10 +172,10 @@ var WiFiPortal = {
                 WiFiPortal.Error.show('Test has timed out after ' + WiFiPortal.Test._timeout + ' seconds. Please check the SSID and Password and try again.');
                 WiFiPortal.Info.hide();
                 // Empty status box
-                /*JvE var responseDiv = document.getElementById("response");
+                var responseDiv = document.getElementById("response");
                 if( responseDiv ){
                     responseDiv.innerHTML = '';
-                }*/
+                }
             }
 
             // Clear all timers on timeout
@@ -194,7 +194,7 @@ var WiFiPortal = {
 
                        // Output response wifi JSON formatted (2 spaces), and with syntax highlighting
                        var stringifyJson = JSON.stringify(resp.wifi, undefined, 2);
-                       //Jve document.getElementById("response").innerHTML = WiFiPortal.highlight(stringifyJson);
+                       document.getElementById("response").innerHTML = WiFiPortal.highlight(stringifyJson);
 
                        if (resp.wifi.status && resp.wifi.ssid) {
                            // "got ip" means successful connection to WiFi, also check that SSId matches one we're testing against
