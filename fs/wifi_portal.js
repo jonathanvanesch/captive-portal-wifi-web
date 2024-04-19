@@ -131,7 +131,7 @@ var WiFiPortal = {
             };
         },
         _all: {},
-        _ids: ["rescan", "save", "check"],
+        _ids: ["rescan", "save"],//JvE_ids: ["rescan", "save", "check"],
         init: function () {
             for (var i = 0; i < WiFiPortal.Buttons._ids.length; i++) {
                 var elID = WiFiPortal.Buttons._ids[i];
@@ -194,6 +194,7 @@ var WiFiPortal = {
 
                        // Output response wifi JSON formatted (2 spaces), and with syntax highlighting
                        var stringifyJson = JSON.stringify(resp.wifi, undefined, 2);
+                       document.getElementById("response").hide(); //JvE
                        document.getElementById("response").innerHTML = WiFiPortal.highlight(stringifyJson);
 
                        if (resp.wifi.status && resp.wifi.ssid) {
