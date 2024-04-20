@@ -5,8 +5,8 @@ version: 1.0.1
 # platforms: [ cc3200, cc3220, esp32, esp8266 ]
 
 filesystem:
-#  - fs_min
-  - fs
+  - fs_min
+#  - fs
 
 config_schema:
   - [ "cportal", "o", {title: "Captive Portal configurations"}]
